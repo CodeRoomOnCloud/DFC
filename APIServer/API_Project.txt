@@ -1,0 +1,62 @@
+GET
+https://localhost:44397/api/masterdata/documenttype => list of document types (for dropdown)
+https://localhost:44397/api/masterdata/statuscode => list of status codes (for dropdown)
+https://localhost:44397/api/masterdata/currencytype => list of currency types (for dropdown)
+https://localhost:44397/api/masterdata/unittype => list of unit types (for dropdown)
+
+https://localhost:44397/api/projects   => list of projects
+https://localhost:44397/api/projects/1 => details of project with id 1
+
+POST
+https://localhost:44397/api/projects   => create project
+
+NOTE: use the following structure in the body to create the project 
+
+{
+	"shortDescription": "Some description about the project 3",
+	"startDate": "2018-02-02T00:00:00",
+	"totalArea": 200,
+	"noOfUnits": 40000,
+	"basePrice": 0.25,
+	"tradeLimit": {
+		"buyLimitMin": 15,
+		"sellLimitMin": 15,
+		"buyLimitMax": 100,
+		"sellLimitMax": 100,
+	},
+	"content": {
+		"content": "Test Project 3 Content",
+	},
+	"statusID": 1,
+	"unitID": 1,
+	"currencyID": 3,
+	"documents": [
+		{
+			"documentTypeID": 1,
+			"description": "Desc 3",
+			"remarks": "Rem 3",
+			"location": "\\Docs\\Project3\\Doc1.pdf",
+			"isAgentVisible": true,
+			"isVendorVisible": true,
+			"isCustomerVisible": true,
+			"isPrivateVisible": true,
+			"name": "Document 1",
+			"active": true
+		},
+		{
+			"documentTypeID": 2,
+			"documentTypeName": "Sale Deed",
+			"description": "Desc 3",
+			"remarks": "Rem 3",
+			"location": "\\Docs\\Project3\\Doc2.pdf",
+			"isAgentVisible": true,
+			"isVendorVisible": true,
+			"isCustomerVisible": true,
+			"isPrivateVisible": true,
+			"name": "Document 2",
+			"active": true
+		}
+	],
+	"name": "Project 3",
+	"active": true
+}
